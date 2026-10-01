@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IPRG is a community of Indian Catholic priests and religious serving in and around Paris. Gathered in faith for over 35 years.">
+    <meta name="theme-color" content="#1E3A8A">
+    <title>IPRG - Indian Priests and Religious Gathering</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        saffron: "#E67E22",
+                        marian: "#1E3A8A",
+                        burgundy: "#7F1D1D",
+                        cream: "#FAFAF9"
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', "serif"],
+                        sans: ["Lato", "sans-serif"]
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="bg-cream text-gray-800 font-sans antialiased">
+    <a class="skip-link" href="#about">Skip to content</a>
+
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50" aria-label="Main">
+        <!-- Flag Symbolism Top Bar (India & France) -->
+        <div class="w-full h-1 flex" title="Symbolism of India and France unity">
+            <div class="w-1/2 flex">
+                <div class="w-1/3 h-full bg-[#FF9933]"></div>
+                <div class="w-1/3 h-full bg-white"></div>
+                <div class="w-1/3 h-full bg-[#138808]"></div>
+            </div>
+            <div class="w-1/2 flex">
+                <div class="w-1/3 h-full bg-[#0055A5]"></div>
+                <div class="w-1/3 h-full bg-white"></div>
+                <div class="w-1/3 h-full bg-[#ED2939]"></div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center gap-3 text-marian hover:text-saffron transition duration-300">
+                        <img src="assets/logo.png" alt="IPRG Logo" class="h-14 w-auto object-contain drop-shadow-sm">
+                        <div>
+                            <span class="font-serif font-bold text-2xl tracking-wider">IPRG</span>
+                            <span class="block text-xs font-sans text-gray-500 uppercase tracking-widest hidden sm:block">Paris, France</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-semibold text-gray-600 hover:text-saffron transition">The Heart</a>
+                    <a href="#history" class="text-sm font-semibold text-gray-600 hover:text-saffron transition">Our Story</a>
+                    <a href="#messages" class="text-sm font-semibold text-gray-600 hover:text-saffron transition">Messages</a>
+                    <a href="#mission" class="text-sm font-semibold text-gray-600 hover:text-saffron transition">Our Mission</a>
+                    <a href="#gatherings" class="text-sm font-semibold text-gray-600 hover:text-saffron transition">Gatherings</a>
+                    <a href="#gallery" class="text-sm font-semibold text-gray-600 hover:text-saffron transition">Gallery</a>
+                    <a href="#directory" class="px-5 py-2 rounded-full bg-marian text-white text-sm font-semibold hover:bg-blue-800 transition shadow-md">Member Directory</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button type="button" id="mobile-menu-btn" class="text-gray-600 hover:text-marian focus:outline-none focus:ring-2 focus:ring-marian rounded p-2" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu">
+                        <i class="fa-solid fa-bars text-2xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-4 space-y-1">
+            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-saffron hover:bg-gray-50">The Heart</a>
+            <a href="#history" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-saffron hover:bg-gray-50">Our Story</a>
+            <a href="#messages" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-saffron hover:bg-gray-50">Messages</a>
+            <a href="#mission" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-saffron hover:bg-gray-50">Our Mission</a>
+            <a href="#gatherings" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-saffron hover:bg-gray-50">Gatherings</a>
+            <a href="#gallery" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-saffron hover:bg-gray-50">Gallery</a>
+            <a href="#directory" class="block px-3 py-2 mt-2 text-center rounded-md bg-marian text-white text-base font-medium hover:bg-blue-800">Member Directory</a>
+        </div>
+    </nav>
+
+    <header class="hero-bg h-screen min-h-[600px] flex items-center justify-center text-center px-4 relative" role="banner" aria-label="IPRG community gathering, 8 November 2025">
+        <div class="max-w-4xl mx-auto text-white z-10 pt-20">
+            <!-- Dual Flag Symbolism Badge -->
+            <div class="inline-flex items-center gap-2.5 bg-black/40 backdrop-blur-md border border-white/20 px-4 py-1.5 rounded-full mb-6 text-xs md:text-sm text-gray-100 shadow-lg">
+                <span class="flex items-center gap-1 font-semibold">
+                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#FF9933]"></span>
+                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-white"></span>
+                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#138808]"></span>
+                    <span class="ml-1">India</span>
+                </span>
+                <i class="fa-solid fa-handshake text-saffron text-xs mx-1"></i>
+                <span class="flex items-center gap-1 font-semibold">
+                    <span>France</span>
+                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#0055A5]"></span>
+                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-white"></span>
+                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#ED2939]"></span>
+                </span>
+            </div>
+
+            <p class="text-saffron font-sans tracking-[0.2em] uppercase text-sm md:text-base font-bold mb-4">Indian Priests and Religious Gathering</p>
+            <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-lg">
+                Rooted in India.<br>
+                Serving in France.<br>
+                United in Faith.
+            </h1>
+            <p class="text-xl md:text-2xl font-light mb-10 text-gray-200 max-w-2xl mx-auto">
+                A home away from home for 35 years. Where mission meets community, and faith finds fellowship.
+            </p>
+            <a href="#about" class="inline-flex items-center gap-2 px-8 py-4 bg-saffron text-white rounded-full font-bold uppercase tracking-wide hover:bg-orange-600 transition duration-300 shadow-lg hover:-translate-y-1 transform">
+                Discover Our Story <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none" aria-hidden="true">
+            <svg class="relative block w-full h-[50px] md:h-[100px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118,130.9,131.6,201.3,130.2,243.6,129.4,283.4,118.8,321.39,56.44Z" class="fill-cream"></path>
+            </svg>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="py-20 px-4 scroll-mt-24">
+            <div class="max-w-6xl mx-auto text-center">
+                <i class="fa-solid fa-hands-holding-circle text-4xl text-saffron mb-6" aria-hidden="true"></i>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-marian mb-6">The Heart of Our Community</h2>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-16">
+                    For over three decades, the IPRG has been a vibrant, supportive community for Indian Catholic priests and religious serving in and around Paris. Though our membership is naturally floating—with priests and religious arriving for higher studies, specialized formation, or short-term pastoral mission—we exist to foster connection, spiritual solidarity, and shared joy.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                        <div class="text-5xl font-serif font-bold text-marian mb-2">35</div>
+                        <div class="text-saffron font-bold tracking-wide uppercase text-sm mb-3">Years of Fellowship</div>
+                        <p class="text-gray-600 text-sm">Established in 1991, growing stronger with every generation.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                        <div class="text-5xl font-serif font-bold text-marian mb-2">50–100</div>
+                        <div class="text-saffron font-bold tracking-wide uppercase text-sm mb-3">Dynamic Members</div>
+                        <p class="text-gray-600 text-sm">A flowing community of diocesan &amp; religious priests and sisters in higher studies or mission.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                        <div class="text-5xl font-serif font-bold text-marian mb-2">2</div>
+                        <div class="text-saffron font-bold tracking-wide uppercase text-sm mb-3">Annual Gatherings</div>
+                        <p class="text-gray-600 text-sm">Coming together every Nov 1st and May 1st to share our joy.</p>
+                    </div>
+                </div>
+
+                <!-- Dual Flag Symbolism Banner -->
+                <div class="mt-12 bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1.5 flex">
+                        <div class="w-1/2 flex">
+                            <div class="w-1/3 h-full bg-[#FF9933]"></div>
+                            <div class="w-1/3 h-full bg-white"></div>
+                            <div class="w-1/3 h-full bg-[#138808]"></div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="w-1/3 h-full bg-[#0055A5]"></div>
+                            <div class="w-1/3 h-full bg-white"></div>
+                            <div class="w-1/3 h-full bg-[#ED2939]"></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-6 pt-2">
+                        <div class="flex items-center gap-3">
+                            <!-- India Tricolor Indicator -->
+                            <div class="flex items-center gap-1 bg-gray-50 border border-gray-200 px-3 py-1.5 rounded-lg">
+                                <span class="w-3 h-6 rounded-xs bg-[#FF9933]"></span>
+                                <span class="w-3 h-6 rounded-xs bg-white border border-gray-300"></span>
+                                <span class="w-3 h-6 rounded-xs bg-[#138808]"></span>
+                                <span class="text-xs font-bold text-gray-700 ml-1">India</span>
+                            </div>
+                            <i class="fa-solid fa-link text-saffron text-sm"></i>
+                            <!-- France Tricolor Indicator -->
+                            <div class="flex items-center gap-1 bg-gray-50 border border-gray-200 px-3 py-1.5 rounded-lg">
+                                <span class="w-3 h-6 rounded-xs bg-[#0055A5]"></span>
+                                <span class="w-3 h-6 rounded-xs bg-white border border-gray-300"></span>
+                                <span class="w-3 h-6 rounded-xs bg-[#ED2939]"></span>
+                                <span class="text-xs font-bold text-gray-700 ml-1">France</span>
+                            </div>
+                        </div>
+                        <div class="text-center md:text-left flex-1">
+                            <h3 class="font-serif text-lg font-bold text-marian">United Across Two Nations</h3>
+                            <p class="text-xs md:text-sm text-gray-600">Celebrating our rich Indian spiritual heritage while fulfilling our pastoral mission in France.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="history" class="py-20 bg-white px-4 scroll-mt-24">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-marian mb-4">Our Journey</h2>
+                    <div class="w-24 h-1 bg-saffron mx-auto rounded"></div>
+                </div>
+                <div class="space-y-16">
+                    <article class="flex flex-col md:flex-row gap-8 items-start">
+                        <div class="md:w-1/3 text-left md:text-right">
+                            <h3 class="font-serif text-2xl font-bold text-burgundy">Humble Beginnings</h3>
+                        </div>
+                        <div class="hidden md:flex flex-col items-center relative self-stretch min-w-[1rem]">
+                            <div class="w-4 h-4 bg-saffron rounded-full mt-2 relative z-10"></div>
+                            <div class="w-px flex-1 bg-gray-200 mt-2"></div>
+                        </div>
+                        <div class="md:w-2/3 text-gray-600 leading-relaxed space-y-4">
+                            <p>The story of the IPRG began over three decades ago with a simple desire for connection. When <strong>Fr. Balthazar Castelino MEP</strong> arrived in Paris from a mission in Madagascar, he proposed a modest idea to <strong>Fr. Lawrence Pius Dorairaj</strong> (then the Tamil chaplain in Paris, now the Bishop of Dharmapuri): to host a brief afternoon get-together over tea and coffee.</p>
+                            <p>With incredible enthusiasm, Fr. Lawrence reached out to his contacts. Despite the short notice, the response was overwhelming. More than 40 individuals gathered for that inaugural meeting.</p>
+                            <p>The gathering featured a special sharing by <strong>Fr. Charles D’Souza (SVD)</strong>, who was awaiting transit to Africa. He briefed attendees on the latest news from India. Though Fr. Charles later passed away from cancer, his contribution to our first meeting remains a cherished memory.</p>
+                        </div>
+                    </article>
+                    <article class="flex flex-col md:flex-row gap-8 items-start">
+                        <div class="md:w-1/3 text-left md:text-right">
+                            <h3 class="font-serif text-2xl font-bold text-burgundy">Establishing a Tradition</h3>
+                        </div>
+                        <div class="hidden md:flex flex-col items-center relative self-stretch min-w-[1rem]">
+                            <div class="w-4 h-4 bg-saffron rounded-full mt-2 relative z-10"></div>
+                            <div class="w-px flex-1 bg-gray-200 mt-2"></div>
+                        </div>
+                        <div class="md:w-2/3 text-gray-600 leading-relaxed space-y-4">
+                            <p>That first meeting was held at the historic <strong>Missions Étrangères de Paris (MEP)</strong>, with Fr. Balthasar and Fr. Lawrence personally covering the expenses. The joy was so profound that the group immediately decided it could not be a one-time event.</p>
+                            <p>A democratic structure was formed by electing members to organize events, and the community shifted to a shared-contribution model to cover expenses joyfully.</p>
+                        </div>
+                    </article>
+                    <article class="flex flex-col md:flex-row gap-8 items-start">
+                        <div class="md:w-1/3 text-left md:text-right">
+                            <h3 class="font-serif text-2xl font-bold text-burgundy">The IPRG Today</h3>
+                        </div>
+                        <div class="hidden md:flex flex-col items-center relative self-stretch min-w-[1rem]">
+                            <div class="w-4 h-4 bg-marian rounded-full mt-2 relative z-10"></div>
+                            <div class="w-px flex-1 bg-gray-200 mt-2"></div>
+                        </div>
+                        <div class="md:w-2/3 text-gray-600 leading-relaxed space-y-4">
+                            <p>Today, the IPRG has blossomed into a mature, 35-year-old institution. While some founding members have moved to new missions or gone to their eternal rest, the spirit of the IPRG has only grown stronger.</p>
+                            <p>From 40 attendees, our family has expanded to approximately 100 active members, ensuring that Indian priests and religious serving in France always have a place to share their lives, their faith, and their joy.</p>
+                        </div>
+                    </article>
+                    <article class="flex flex-col md:flex-row gap-8 items-start">
+                        <div class="md:w-1/3 text-left md:text-right">
+                            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-saffron/10 text-saffron mb-2">3rd October 2026</span>
+                            <h3 class="font-serif text-2xl font-bold text-burgundy">35th Jubilee &amp; Website Launch</h3>
+                        </div>
+                        <div class="hidden md:flex flex-col items-center relative self-stretch min-w-[1rem]">
+                            <div class="w-4 h-4 bg-saffron rounded-full mt-2 relative z-10 shadow-[0_0_0_4px_rgba(230,126,34,0.25)]"></div>
+                        </div>
+                        <div class="md:w-2/3 text-gray-600 leading-relaxed space-y-4">
+                            <p>To mark the historic 35th year of the IPRG, this official website was launched on <strong>3rd October 2026</strong> by our founder, <strong>Bp. Lawrence Pius Dorairaj</strong> (Bishop of Dharmapuri).</p>
+                            <p>This digital platform opens a new chapter for our community, connecting Indian priests and religious across France, preserving our history, and fostering fraternal fellowship for generations to come.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- MEP & Madura Mission Historical Tribute Card -->
+                <div class="mt-16 bg-white rounded-3xl border border-gray-100 shadow-md overflow-hidden text-left">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+                        <div class="lg:col-span-5 relative h-64 lg:h-full min-h-[260px] overflow-hidden bg-gray-100">
+                            <img src="assets/mep-paris.jpg" alt="Missions Étrangères de Paris (MEP) Headquarters in Paris" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-4 lg:hidden">
+                                <span class="text-white text-xs font-semibold"><i class="fa-solid fa-building-columns text-saffron mr-1"></i> Missions Étrangères de Paris (MEP)</span>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-7 p-8 md:p-10 space-y-4">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-marian text-white">Historical Tribute</span>
+                                <span class="text-xs font-semibold text-saffron">MEP &amp; Madura Jesuit Mission</span>
+                            </div>
+                            <h4 class="font-serif text-2xl md:text-3xl font-bold text-marian">Seeds Sown in India, Fruits Witnessed in France</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                The historic <strong>Missions Étrangères de Paris (MEP)</strong> holds extraordinary significance in sustaining the IPRG for 35 years. Alongside the legendary <strong>Madura Jesuit Mission</strong>, MEP missionaries sowed the early seeds of faith across southern India centuries ago. Today, as Indian priests and religious gather at the MEP in Paris, we stand in profound gratitude as living witnesses of those fruitful seeds—now serving in France and serving the mission in turn.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Messages Section -->
+        <section id="messages" class="py-20 px-4 bg-slate-50 border-y border-gray-100 scroll-mt-24">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <i class="fa-solid fa-envelope-open-text text-4xl text-saffron mb-4" aria-hidden="true"></i>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-marian mb-4">Messages &amp; Blessings</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Words of encouragement and pastoral guidance from our Founder, Co-Founder, and Leadership.
+                    </p>
+                    <div class="w-24 h-1 bg-saffron mx-auto rounded mt-6"></div>
+                </div>
+
+                <!-- Main Founders Grid (Bp. Lawrence Pius & Fr. Balthazar) -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-12">
+                    
+                    <!-- Message from Founder: Bp. Lawrence Pius -->
+                    <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition border border-gray-100 overflow-hidden flex flex-col justify-between p-8 relative">
+                        <div class="absolute top-0 right-0 transform translate-x-3 -translate-y-3 text-saffron/10 text-9xl font-serif select-none pointer-events-none">“</div>
+                        <div>
+                            <div class="flex items-center gap-5 mb-6">
+                                <!-- Image Container Placeholder (Replace icon with <img> when photos are ready) -->
+                                <div class="relative flex-shrink-0">
+                                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-marian/10 border-2 border-saffron flex items-center justify-center text-marian shadow-md overflow-hidden">
+                                        <img src="assets/bp-lawrence.jpg" alt="Bp. Lawrence Pius" class="w-full h-full object-cover object-top">
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-saffron/10 text-saffron mb-1">Founder</span>
+                                    <h3 class="font-serif text-2xl font-bold text-marian">Bp. Lawrence Pius</h3>
+                                    <p class="text-sm font-semibold text-gray-500">Bishop of Dharmapuri &amp; Founder of IPRG</p>
+                                </div>
+                            </div>
+                            <div class="text-gray-600 leading-relaxed space-y-4 relative z-10 italic">
+                                <p>“What began decades ago as a modest afternoon gathering over tea has grown into a vibrant home for Indian clergy and religious serving across France. May the IPRG continue to be a refuge of joy, spiritual renewal, and deep fraternity for generations to come.”</p>
+                            </div>
+                        </div>
+                        <div class="mt-8 pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-400">
+                            <span>Message from the Founder</span>
+                            <i class="fa-solid fa-quote-right text-saffron text-sm"></i>
+                        </div>
+                    </div>
+
+                    <!-- Message from Co-Founder: Fr. Balthazar Castelino MEP -->
+                    <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition border border-gray-100 overflow-hidden flex flex-col justify-between p-8 relative">
+                        <div class="absolute top-0 right-0 transform translate-x-3 -translate-y-3 text-saffron/10 text-9xl font-serif select-none pointer-events-none">“</div>
+                        <div>
+                            <div class="flex items-center gap-5 mb-6">
+                                <div class="relative flex-shrink-0">
+                                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-marian/10 border-2 border-saffron flex items-center justify-center text-marian shadow-md overflow-hidden">
+                                        <img src="assets/fr-balthazar.png" alt="Fr. Balthazar Castelino MEP" class="w-full h-full object-cover object-top">
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-burgundy/10 text-burgundy mb-1">Co-Founder</span>
+                                    <h3 class="font-serif text-2xl font-bold text-marian">Fr. Balthazar Castelino MEP</h3>
+                                    <p class="text-sm font-semibold text-gray-500">Co-Founder of IPRG</p>
+                                </div>
+                            </div>
+                            <div class="text-gray-600 leading-relaxed space-y-4 relative z-10">
+                                <p>“When we met for the first time in 1991 for just two hours, we never thought that the IPRG would last for 35 years. That first meeting gathered around 35 to 40 priests and religious (men and women). Ten years ago, we had over 80 people at our meeting, and now we average 50 to 60 members.”</p>
+                                <p>“In some communities, we have one or two Indian members who may want to interact with others from the same region or state, as well as enjoy Indian food that they cannot get in their mixed communities. Our coming together can help those priests and religious experience a sense of warmth and closeness, helping them live out their vocation better in France.”</p>
+                                <p>“Naturally, gatherings involve expenses. However, not being able to contribute financially should never stop anyone from attending. Those who are able, can give more so that those who lack the means can still participate and benefit from our gathering. Fraternal charity should be what motivates us to come together.”</p>
+                                <p class="font-serif font-bold text-marian text-lg pt-2">“May the IPRG last for many more years!”</p>
+                            </div>
+                        </div>
+                        <div class="mt-8 pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-400">
+                            <span>Message from Fr. Balthazar Castelino MEP</span>
+                            <i class="fa-solid fa-quote-right text-saffron text-sm"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Message from President: Fr. Martin SDB -->
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition border border-marian/10 p-8 max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 relative">
+                    <!-- Image Container -->
+                    <div class="relative flex-shrink-0">
+                        <div class="w-24 h-24 md:w-28 md:h-28 rounded-full bg-marian/10 border-2 border-marian flex items-center justify-center text-marian shadow-md overflow-hidden">
+                            <img src="assets/fr-martin-sdb.png" alt="Fr. Martin SDB" class="w-full h-full object-cover object-top">
+                        </div>
+                    </div>
+                    <div class="flex-1 text-center md:text-left">
+                        <div class="mb-2">
+                            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-marian/10 text-marian">IPRG President</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-marian mb-1">Fr. Martin SDB</h3>
+                        <p class="text-sm font-semibold text-saffron mb-4">President of IPRG</p>
+                        <p class="text-gray-600 italic leading-relaxed">
+                            “As President of the IPRG, I am honored to welcome every Indian priest and religious serving in France into our community. Together, we continue to walk in faith, supporting one another and sharing our joy always.”
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Our Mission Section (Marian Solidarity Artwork) -->
+        <section id="mission" class="py-20 px-4 bg-slate-900 text-white relative overflow-hidden scroll-mt-24">
+            <!-- Background Radial Glow -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-saffron/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="max-w-6xl mx-auto relative z-10 text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-saffron/20 text-saffron font-bold text-xs uppercase tracking-widest mb-4 border border-saffron/30">
+                    <i class="fa-solid fa-cross"></i> Spiritual Vision &amp; Mission
+                </div>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-white mb-4">Two Shrines of Grace, One Universal Catholic Mission</h2>
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12">
+                    Connecting <strong>Our Lady of Vailankanni</strong> (<em>The Lourdes of the East</em>) in India with the <strong>Sanctuary of Our Lady of Lourdes</strong> in France through prayer, fraternity, and pastoral service.
+                </p>
+
+                <!-- Featured Artwork Showcase Frame -->
+                <div class="relative max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-white/15 bg-slate-800/80 group">
+                    <img src="assets/marian-solidarity.jpg" alt="IPRG - Two Shrines of Grace, One Universal Catholic Mission (Vailankanni & Lourdes)" class="w-full h-auto object-cover transform group-hover:scale-[1.01] transition duration-500 shadow-2xl">
+                    <div class="p-6 md:p-8 bg-slate-950/95 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-left">
+                        <div class="space-y-1">
+                            <span class="text-saffron font-bold text-xs uppercase tracking-widest block">IPRG Spiritual Heritage</span>
+                            <h3 class="font-serif text-xl font-bold text-white">Bridging India &amp; France in Faith</h3>
+                            <p class="text-xs md:text-sm text-gray-400">
+                                Indian priests and religious bring this shared devotion to pastoral missions across French dioceses.
+                            </p>
+                        </div>
+                        <a href="assets/marian-solidarity.jpg" target="_blank" class="flex-shrink-0 px-6 py-3 rounded-full bg-saffron text-white text-xs font-bold uppercase tracking-wider hover:bg-orange-600 transition shadow-lg inline-flex items-center gap-2">
+                            <i class="fa-solid fa-expand"></i> View Full Image
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="gatherings" class="paris-bg py-24 px-4 relative scroll-mt-24">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+                <div>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-marian mb-6">Our Spiritual Home &amp; Gatherings</h2>
+                    <p class="text-xl text-gray-700 mb-8 font-light">“Gathering twice a year, sharing our joy always.”</p>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-white text-saffron rounded-full flex items-center justify-center shadow-md">
+                                <i class="fa-regular fa-calendar-check text-xl" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-gray-900">Bi-Annual Meetings</h3>
+                                <p class="text-gray-600 text-sm">We gather twice a year from <strong>9:30 AM to 4:00 PM</strong>:<br>
+                                • <strong>1st May</strong><br>
+                                • <strong>November</strong> (The Saturday following All Souls Day)</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-white text-marian rounded-full flex items-center justify-center shadow-md">
+                                <i class="fa-solid fa-location-dot text-xl" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-gray-900">Meeting Venue</h3>
+                                <p class="text-gray-600 text-sm"><strong>Missions Étrangères de Paris (MEP)</strong><br>
+                                128, Rue du Bac, 75007 Paris, France</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-marian rounded-2xl transform translate-x-4 translate-y-4 opacity-20"></div>
+                    <img src="assets/activity-mass.jpg" alt="IPRG Holy Eucharist Mass Celebration" class="rounded-2xl shadow-xl relative z-10 w-full h-auto object-cover aspect-[4/3]">
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery & Community Life Section -->
+        <section id="gallery" class="py-20 px-4 bg-slate-50 border-t border-gray-100 scroll-mt-24">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-saffron/10 text-saffron font-bold text-xs uppercase tracking-widest mb-4">
+                        <i class="fa-solid fa-camera-retro"></i> Life of the Community
+                    </div>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-marian mb-4">Moments of Fellowship</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        From shared Mass and spiritual reflection to traditional meals and outdoor games, experience the warmth of our gathering.
+                    </p>
+                    <div class="w-24 h-1 bg-saffron mx-auto rounded mt-6"></div>
+                </div>
+
+                <!-- Main Featured Photo (Group Photo) -->
+                <div class="mb-10 rounded-3xl overflow-hidden shadow-lg border border-gray-100 relative group bg-white">
+                    <img src="assets/activity-group-photo.jpg" alt="IPRG Members Gathering Photo" class="w-full h-[380px] md:h-[480px] object-cover transform group-hover:scale-[1.01] transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex flex-col justify-end p-6 md:p-8 text-white">
+                        <span class="text-xs font-bold uppercase tracking-wider text-saffron mb-1"><i class="fa-solid fa-users mr-1"></i> Community Gathering</span>
+                        <h3 class="font-serif text-2xl md:text-3xl font-bold">Indian Priests &amp; Religious Members in France</h3>
+                        <p class="text-sm text-gray-200 mt-1 max-w-xl">Bringing together priests, seminarians, and religious sisters from various states and congregations for fellowship, prayer, and support.</p>
+                    </div>
+                </div>
+
+                <!-- 6 Activity Cards Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Holy Mass Photo -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition group">
+                        <div class="relative aspect-[4/3] overflow-hidden bg-gray-100">
+                            <img src="assets/activity-mass.jpg" alt="Eucharistic Celebration" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                            <div class="absolute top-3 left-3 bg-marian/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm">
+                                <i class="fa-solid fa-cross mr-1 text-saffron"></i> Liturgy
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-serif font-bold text-marian text-lg mb-1">Eucharistic Celebration</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed">Celebrating Holy Mass together in faith and communion.</p>
+                        </div>
+                    </div>
+
+                    <!-- Spiritual Nourishment Photo -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition group">
+                        <div class="relative aspect-[4/3] overflow-hidden bg-gray-100">
+                            <img src="assets/activity-spiritual-nourishment.jpg" alt="Spiritual Nourishment Talk" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                            <div class="absolute top-3 left-3 bg-indigo-800/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm">
+                                <i class="fa-solid fa-book-open-reader mr-1 text-saffron"></i> Formation
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-serif font-bold text-marian text-lg mb-1">Spiritual Nourishment</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed">Inspiring talks, pastoral guidance, and spiritual reflection sessions.</p>
+                        </div>
+                    </div>
+
+                    <!-- Fraternal Assembly Photo -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition group">
+                        <div class="relative aspect-[4/3] overflow-hidden bg-gray-100">
+                            <img src="assets/activity-fraternal-assembly.jpg" alt="Fraternal Assembly of Members" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                            <div class="absolute top-3 left-3 bg-blue-800/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm">
+                                <i class="fa-solid fa-users-rectangle mr-1 text-saffron"></i> Assembly
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-serif font-bold text-marian text-lg mb-1">Fraternal Assembly</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed">Priests and religious sisters gathered together in solidarity and shared mission.</p>
+                        </div>
+                    </div>
+
+                    <!-- Banana Leaf Meal Photo -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition group">
+                        <div class="relative aspect-[4/3] overflow-hidden bg-gray-100">
+                            <img src="assets/activity-meal.jpg" alt="Traditional Indian Meal" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                            <div class="absolute top-3 left-3 bg-saffron/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm">
+                                <i class="fa-solid fa-utensils mr-1"></i> Fellowship
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-serif font-bold text-marian text-lg mb-1">Traditional Indian Meals</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed">Sharing home-cooked Indian food served on banana leaves.</p>
+                        </div>
+                    </div>
+
+                    <!-- Discussion Circle Photo -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition group">
+                        <div class="relative aspect-[4/3] overflow-hidden bg-gray-100">
+                            <img src="assets/activity-discussion.jpg" alt="Fraternal Sharing Circle" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                            <div class="absolute top-3 left-3 bg-burgundy/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm">
+                                <i class="fa-solid fa-comments mr-1 text-saffron"></i> Fraternal Dialogue
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-serif font-bold text-marian text-lg mb-1">Sharing &amp; Dialogue</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed">Small group discussions on mission, vocation, and life in France.</p>
+                        </div>
+                    </div>
+
+                    <!-- Outdoor Recreation Photo -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition group">
+                        <div class="relative aspect-[4/3] overflow-hidden bg-gray-100">
+                            <img src="assets/activity-recreation.jpg" alt="Outdoor Recreation & Games" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                            <div class="absolute top-3 left-3 bg-emerald-700/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm">
+                                <i class="fa-solid fa-face-smile mr-1 text-saffron"></i> Recreation
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-serif font-bold text-marian text-lg mb-1">Recreation &amp; Joy</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed">Relaxing together with garden games, laughter, and shared joy.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Connect & Contact Section -->
+        <section id="directory" class="py-20 px-4 bg-marian text-white scroll-mt-24">
+            <div class="max-w-5xl mx-auto text-center">
+                <i class="fa-solid fa-address-book text-4xl text-saffron mb-6" aria-hidden="true"></i>
+                <h2 class="font-serif text-3xl md:text-5xl font-bold mb-4">Connect &amp; Join Our Fellowship</h2>
+                <p class="text-lg md:text-xl font-light text-blue-100 mb-12 max-w-3xl mx-auto">
+                    Are you a newly arrived Indian priest, religious sister, or seminarian in France? We invite you to reach out and be part of our joy!
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 text-left">
+                    
+                    <!-- President Contact Card -->
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl shadow-xl flex items-start gap-5">
+                        <div class="w-14 h-14 rounded-full bg-saffron text-white flex items-center justify-center flex-shrink-0 text-2xl shadow-md">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-saffron">IPRG President</span>
+                            <h3 class="font-serif text-2xl font-bold text-white mb-1">Fr. Martin SDB</h3>
+                            <p class="text-sm text-blue-100 mb-3"><i class="fa-solid fa-phone text-saffron text-xs mr-2"></i><a href="tel:+33780753434" class="hover:underline font-semibold">+33 7 80 75 34 34</a></p>
+                            <p class="text-xs text-blue-200 italic">"If you have any new arrivals from India (religious or priests), contact Fr. Martin to welcome them into our community."</p>
+                        </div>
+                    </div>
+
+                    <!-- Official Email & Address Card -->
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl shadow-xl flex items-start gap-5">
+                        <div class="w-14 h-14 rounded-full bg-saffron text-white flex items-center justify-center flex-shrink-0 text-2xl shadow-md">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-saffron">Official Contact</span>
+                            <h3 class="font-serif text-2xl font-bold text-white mb-1">IPRG Paris</h3>
+                            <p class="text-sm text-blue-100 mb-2"><i class="fa-solid fa-envelope text-saffron text-xs mr-2"></i><a href="mailto:iprgmep@gmail.com" class="hover:underline font-semibold">iprgmep@gmail.com</a></p>
+                            <p class="text-xs text-blue-100"><i class="fa-solid fa-location-dot text-saffron text-xs mr-2"></i>128, Rue du Bac, 75007 Paris</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Directory Download/Access Card -->
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 p-8 md:p-10 rounded-2xl shadow-2xl max-w-3xl mx-auto">
+                    <h3 class="font-serif text-2xl font-bold mb-3">IPRG Member Directory</h3>
+                    <p class="text-blue-100 mb-6 text-sm md:text-base">
+                        Access our directory of <strong>97 active members</strong> across France including Indian priests (diocesan &amp; religious), seminarians, and religious sisters.
+                    </p>
+                    <a href="mailto:iprgmep@gmail.com?subject=IPRG%20Member%20Directory%20Access" class="inline-flex items-center gap-3 px-8 py-4 bg-saffron text-white rounded-full font-bold uppercase tracking-wide hover:bg-orange-600 transition duration-300 shadow-lg">
+                        <i class="fa-solid fa-folder-open text-xl" aria-hidden="true"></i> Request Directory Access
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 py-12 px-4 border-t border-gray-800 text-center">
+        <div class="max-w-6xl mx-auto flex flex-col items-center">
+            <img src="assets/logo.png" alt="IPRG Logo" class="h-20 w-auto object-contain mb-6 drop-shadow-md">
+            <p class="font-serif text-2xl text-white tracking-widest mb-4">IPRG</p>
+            <p class="mb-6">Indian Priests and Religious Gathering • Paris, France</p>
+            <div class="w-full h-px bg-gray-800 my-8"></div>
+            <p class="text-sm">
+                &copy; <span id="year"></span> IPRG. All rights reserved.<br>
+                <span class="italic text-gray-500 mt-2 block">“Sharing our joy always.”</span>
+                <span class="text-xs text-gray-400 mt-4 block pt-3 border-t border-gray-800/80">Website designed and hosted by <strong>Fr. Joseph ArRa OFM Cap.</strong></span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
