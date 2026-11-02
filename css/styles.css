@@ -38,3 +38,20 @@
     background: #e5e7eb;
     transform: translateX(-50%);
 }
+
+
+/* Ashoka Chakra Dynamic Spin */
+@keyframes spin-chakra {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.chakra-spin {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: spin-chakra 8s linear infinite;
+}
